@@ -149,6 +149,7 @@ void statki::wielomasztowiec(vector < vector<int> > & tab,int w, int k,int orien
                 k = GEN::losujOdZeraDo(k_max);
             }
             w_temp = w;
+            zlaPozycja=0;
             for(int i=0;i<ilosc;i++){
                 var = czyNaPolu(tab,w_temp,k,w_max,k_max);
                 if(var==0) zlaPozycja=1;
@@ -185,6 +186,7 @@ void statki::wielomasztowiec(vector < vector<int> > & tab,int w, int k,int orien
                 k = GEN::losujOdZeraDo(k_max);
             }
             k_temp = k;
+            zlaPozycja=0;
             for(int i=0;i<ilosc;i++)
             {
                 var = czyNaPolu(tab,w,k_temp,w_max,k_max);
@@ -234,10 +236,10 @@ void trzymasztowiec_po_przekatnej::wielomasztowiec(vector < vector<int> > & tab,
             }
             w_temp = w;
             k_temp = k;
+            zlaPozycja=0;
             for(int i=0;i<ilosc;i++){
                 var = czyNaPolu(tab,w_temp,k_temp,w_max,k_max);
                 if(var==0) zlaPozycja=1;
-                else zlaPozycja=0;
                 w_temp++;
                 k_temp++;
             }
@@ -277,11 +279,11 @@ void trzymasztowiec_po_przekatnej::wielomasztowiec(vector < vector<int> > & tab,
             }
             k_temp = k;
             w_temp = w;
+            zlaPozycja=0;
             for(int i=0;i<ilosc;i++)
             {
                 var = czyNaPolu(tab,w_temp,k_temp,w_max,k_max);
                 if(var==0) zlaPozycja=1;
-                else zlaPozycja=0;
                 k_temp--;
                 w_temp++;
             }

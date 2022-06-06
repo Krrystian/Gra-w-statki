@@ -9,6 +9,7 @@ void rozgrywka::gra(dane *ust, vector < vector<int> > & tab)
     statkiGracza(ust, gracz1);
     while (!strzaly::koniecGry(ust))
         przebiegGry(ust, gracz1, pc, gracz1_strzaly);
+    cout << "Gra dobiegla konca"<<endl;
 }
 void rozgrywka::statkiGracza(dane *obj, ustawienia &player)
 {

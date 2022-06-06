@@ -55,14 +55,16 @@ void strzaly::strzal(vector < vector<int> > & tab, vector < vector<int> > & tab_
 {
     statki s;
     if(tab[w][k]==1){
-        tab_strzaly[w][k] = 3;
+        if (tab_strzaly[w][k]!=1)
+            tab_strzaly[w][k] = 3;
         tab[w][k]=5;
         bool var = s.czyOtoczenie(tab,w,k,w_max,k_max);
         if(var == 0){ cout << "Zniszczono statek!" <<endl;
                     counter++;}
     }
     else{
-        tab_strzaly[w][k] = 4;
+        if (tab_strzaly[w][k]!=1)
+            tab_strzaly[w][k] = 4;
         tab[w][k]=6;}
 }
 bool strzaly::czyStrzal(vector < vector<int> > & tab_strzaly, int w, int k,int w_max, int k_max){

@@ -38,4 +38,7 @@ int main()
         rozgrywka def;
         def.gra(dane_gry, tab);
     }
+    delete dane_gry;
+    tab.clear();
+    return 0;
 }
