@@ -13,5 +13,6 @@ DO ZMIANY:
 BŁĘDY DO NAPRAWY:
   1. Komputer moze sam siebie zniszczyc, w najgorszym wypadku gra nie dobiegnie do końca.
   2. Jeżeli najpierw podamy WIERSZ a potem KOLUMNE, program oszaleje.
+  3. Czasami się nie ładuje gra, winą jest komputer, któremu zajmuje strasznie dlugo wczytanie pól(?)
 
 To wszystkie jakie zauważyłem (06.06.22).
