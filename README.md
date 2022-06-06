@@ -18,5 +18,6 @@ BŁĘDY DO NAPRAWY:
 To wszystkie jakie zauważyłem (06.06.22).
 
 07.06.22:
-  -Komputer moze sam siebie zniszczyc, wyeleminowanie niekończącej się gry
-  +Komputer moze strzelic dwa razy w to samo miejsce, jezeli na tym polu stoi statek
+  -- Komputer moze sam siebie zniszczyc, wyeleminowanie niekończącej się gry
+  ++ Komputer moze strzelic dwa razy w to samo miejsce, jezeli na tym polu stoi statek
+  ?? Dodac Makefile
