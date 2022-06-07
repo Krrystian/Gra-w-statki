@@ -6,7 +6,7 @@
 #include <iostream>
 #include <ctime>
 #include "ustawienia.h"
-//NIE USUNIĘTY MINUS - KOMPUTER SAM SOBIE MOZE ZESTRZELIC STATEK
+
 struct dane;
 
 class komputer{
