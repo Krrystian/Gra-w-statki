@@ -25,4 +25,4 @@ DO ZMIANY:
 BŁĘDY DO NAPRAWY:
   1. --Komputer moze sam siebie zniszczyc, w najgorszym wypadku gra nie dobiegnie do końca.
   2. Jeżeli najpierw podamy WIERSZ a potem KOLUMNE, program oszaleje.
-  3. ++Czasami się nie ładuje gra. ROZWIĄZANIE: Ograniczyć ilość możliwych prób na ulokowanie statków i przerwać program w wypadku nie znalezienie ich.
+  3. --Czasami się nie ładuje gra. ROZWIĄZANIE: Ograniczyć ilość możliwych prób na ulokowanie statków i przerwać program w wypadku nie znalezienie ich.
