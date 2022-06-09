@@ -19,7 +19,7 @@ BŁĘDY DO NAPRAWY:
 
 DO ZMIANY: 
   1. --Wywolanie operatora do kazdego statku jest bez sensu. Mozna usunąć i użyć funkcji wielostatek zamiast ich.
-  2. Zmniejszenie ilosci zmiennych przekazywanych do funkcji. PROBLEM: Wymaga przebudowy sporej ilości kodu.
+  2. Zmniejszenie ilosci zmiennych przekazywanych do funkcji. PROBLEM: Wymaga przebudowy sporej ilości kodu. Stworzenie struktury dla strzalow
   4. --Makefile.
 
 BŁĘDY DO NAPRAWY:
