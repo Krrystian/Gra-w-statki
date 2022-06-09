@@ -4,6 +4,7 @@
 #include "rozgrywka.h"
 #include <iostream>
 #include <vector>
+//JEDNOMASZTOWIEC ZAMIAST KONSTRUKTORA DAC WIELOMASZTOWIEC
 
 using namespace std;
 

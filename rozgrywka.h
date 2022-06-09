@@ -2,11 +2,13 @@
 #define rozgrywka_h
 #include "ustawienia.h"
 #include "komputer.h"
+#include "statki.h"
 #include <stdio.h>
 #include <iostream>
 #include <vector>
 
 struct dane;
+
 class rozgrywka{
 public:
     rozgrywka(dane *ust,int wiersze,int kolumny,int jednomasztowce, int dwumasztowce, int trzymasztowce, int trzymasztowce_po_przekatnej)

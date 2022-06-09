@@ -17,7 +17,9 @@ komputer::komputer(dane *obj,vector < vector<int> > & tab)
         const int dwu = jedno+obj->dwumasztowiec;
         const int trzy = dwu+obj->trzymasztowiec;
         const int trzy_pp = trzy+obj->trzymasztowiec_po_przekatnej;
-        
+        statki a;
+        trzymasztowiec_po_przekatnej tpp;
+        jednomasztowiec j;
         for (int i=0; i<trzy_pp;i++)
         {
             if (i==jedno) statek = 1;
@@ -32,23 +34,19 @@ komputer::komputer(dane *obj,vector < vector<int> > & tab)
             switch(statek)
             {
                 case 0:{
-                    jednomasztowiec j(tab,w,k,0,obj->wiersze-1,obj->kolumny-1);
-                    j.~jednomasztowiec();
+                    j.jedenmaszt(tab, w, k, 1, obj->wiersze-1, obj->kolumny-1);
                     //licznik1++;
                     break;}
                 case 1:{
-                    dwumasztowiec d(tab,w,k,orientacja,0,obj->wiersze-1,obj->kolumny-1);
-                    d.~dwumasztowiec();
+                    a.wielomasztowiec(tab, w, k, orientacja, 2, 0, obj->wiersze-1,obj->kolumny-1);
                     //licznik2++;
                     break;}
                 case 2:{
-                    trzymasztowiec t(tab,w,k,orientacja,0,obj->wiersze-1,obj->kolumny-1);
-                    t.~trzymasztowiec();
+                    a.wielomasztowiec(tab, w, k, orientacja, 3, 0, obj->wiersze-1,obj->kolumny-1);
                     //licznik3++;
                     break;}
                 case 3:{
-                    trzymasztowiec_po_przekatnej tpp(tab,w,k,orientacja,0,obj->wiersze-1,obj->kolumny-1);
-                    tpp.~trzymasztowiec_po_przekatnej();
+                    tpp.wielomasztowiec(tab, w, k, orientacja, 3, 0, obj->wiersze-1,obj->kolumny-1);
                     //licznik4++;
                     break;}
             }

@@ -44,7 +44,6 @@ void ustawienia::wyswietl2(){
                     cout <<"0 ";
                     break;
             }
-            
         }
         cout << std::endl;
     }

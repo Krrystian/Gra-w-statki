@@ -13,6 +13,9 @@ void rozgrywka::gra(dane *ust, vector < vector<int> > & tab)
 }
 void rozgrywka::statkiGracza(dane *obj, ustawienia &player)
 {
+    statki a;
+    trzymasztowiec_po_przekatnej tpp;
+    jednomasztowiec j;
     int w,orientacja,statek=0;
     char k;
     const int jedno = obj->jednomasztowiec;
@@ -21,8 +24,7 @@ void rozgrywka::statkiGracza(dane *obj, ustawienia &player)
     const int trzy_pp = trzy+obj->trzymasztowiec_po_przekatnej;
     
     for (int i=0; i<trzy_pp;i++)
-    {
-        if (i==jedno) statek = 1;
+    {        if (i==jedno) statek = 1;
         if (i==dwu) statek = 2;
         if (i==trzy) statek = 3;
         
@@ -33,7 +35,7 @@ void rozgrywka::statkiGracza(dane *obj, ustawienia &player)
                 cin>>k;
                 cin>>w;
                 k = toupper(k);
-                jednomasztowiec j(player.tab,w-1,(int)k-65,1,obj->wiersze-1,obj->kolumny-1);
+                j.jedenmaszt(player.tab,w-1,static_cast<char>(k)-65,1,obj->wiersze-1,obj->kolumny-1);
                 j.~jednomasztowiec();
                 player.wyswietl2();
                 break;}
@@ -43,8 +45,7 @@ void rozgrywka::statkiGracza(dane *obj, ustawienia &player)
                 cin>>w;
                 cin>>orientacja;
                 k = toupper(k);
-                dwumasztowiec d(player.tab,w-1,(int)k-65,orientacja,1,obj->wiersze-1,obj->kolumny-1);
-                d.~dwumasztowiec();
+                a.wielomasztowiec(player.tab, w-1, static_cast<char>(k)-65, orientacja, 2, 1, obj->wiersze-1, obj->kolumny-1);
                 player.wyswietl2();
                 break;}
             case 2:{
@@ -53,8 +54,7 @@ void rozgrywka::statkiGracza(dane *obj, ustawienia &player)
                 cin>>w;
                 cin>>orientacja;
                 k = toupper(k);
-                trzymasztowiec t(player.tab,w-1,(int)k-65,orientacja,1,obj->wiersze-1,obj->kolumny-1);
-                t.~trzymasztowiec();
+                a.wielomasztowiec(player.tab, w-1, static_cast<char>(k)-65, orientacja, 3, 1, obj->wiersze-1, obj->kolumny-1);
                 player.wyswietl2();
                 break;}
             case 3:{
@@ -62,8 +62,7 @@ void rozgrywka::statkiGracza(dane *obj, ustawienia &player)
                 cin>>k;
                 cin>>w;
                 cin>>orientacja;
-                trzymasztowiec_po_przekatnej tpp(player.tab,w-1,(int)k-65,orientacja,1,obj->wiersze-1,obj->kolumny-1);
-                tpp.~trzymasztowiec_po_przekatnej();
+                tpp.wielomasztowiec(player.tab, w-1, static_cast<char>(k)-65, orientacja, 3, 1, obj->wiersze-1, obj->kolumny-1);
                 player.wyswietl2();
                 break;}
         }
@@ -80,14 +79,14 @@ void rozgrywka::przebiegGry(dane *obj, ustawienia &player, ustawienia &pc, ustaw
     cin >> k;
     cin >> w;
     k = toupper(k);
-    while(!s.czyStrzal(gracz_strzaly.tab, w-1, (int)k-65,obj->wiersze-1,obj->kolumny-1))
+    while(!s.czyStrzal(gracz_strzaly.tab, w-1, static_cast<char>(k)-65,obj->wiersze-1,obj->kolumny-1))
     {
         cout << "Podaj poprawne wspolrzedne do strzalu [k,w]: ";
         cin >> k;
         cin >> w;
         k = toupper(k);
     }
-    s.strzal(pc.tab, gracz_strzaly.tab, w-1, (int)k-65,obj->licznik1,obj->wiersze-1,obj->kolumny-1);
+    s.strzal(pc.tab, gracz_strzaly.tab, w-1, static_cast<char>(k)-65,obj->licznik1,obj->wiersze-1,obj->kolumny-1);
     
     w = GEN::losujOdZeraDo(obj->wiersze-1);
     z = GEN::losujOdZeraDo(obj->kolumny-1);
@@ -99,9 +98,9 @@ void rozgrywka::przebiegGry(dane *obj, ustawienia &player, ustawienia &pc, ustaw
     s.strzal(player.tab, pc.tab, w, z,obj->licznik2,obj->wiersze-1,obj->kolumny-1);
     cout << "TWOJE STRZALY: "<<endl;
     gracz_strzaly.wyswietl2();
-    
+    k = static_cast<int>(z+65);
     cout << endl;
-    cout << "Przeciwnik strzelil w pole: " << (char)(z+65) <<" "<<w+1<<endl;
+    cout << "Przeciwnik strzelil w pole: " << k <<" "<<w+1<<endl;
     cout <<endl;
     cout << "TWOJA TABLICA:" <<endl;
     player.wyswietl2();

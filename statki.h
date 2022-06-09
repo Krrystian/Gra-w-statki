@@ -4,6 +4,8 @@
 #include "komputer.h"
 #include "ustawienia.h"
 using namespace std;
+struct dane;
+
 class statki
 {
 public:
@@ -15,10 +17,10 @@ public:
 
 class jednomasztowiec: public statki{
 public:
-    jednomasztowiec(vector < vector<int> > & tab,int w,int k,bool osoba,int w_max, int k_max);
-    ~jednomasztowiec(){};
+    
+    void jedenmaszt(vector < vector<int> > & tab,int w,int k,bool osoba,int w_max, int k_max);
 };
-
+/*
 class dwumasztowiec:public statki{
 public:
     dwumasztowiec(vector < vector<int> > & tab,int w,int k,int orientacja,bool osoba,int w_max, int k_max)
@@ -36,15 +38,11 @@ public:
     };
     ~trzymasztowiec(){};
 };
+ */
 class trzymasztowiec_po_przekatnej : public statki{
 public:
+    trzymasztowiec_po_przekatnej() = default;
     void wielomasztowiec(vector < vector<int> > & tab,int w, int k,int orientacja,int ilosc,bool osoba,int w_max, int k_max);
-    
-    trzymasztowiec_po_przekatnej(vector < vector<int> > & tab,int w,int k,int orientacja,bool osoba,int w_max, int k_max)
-    {
-        wielomasztowiec(tab,w,k,orientacja,3,osoba,w_max,k_max);
-    };
-    ~trzymasztowiec_po_przekatnej(){};
 };
 
 #endif // STATKI_H

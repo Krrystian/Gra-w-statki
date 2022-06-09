@@ -6,7 +6,6 @@
 #include <iostream>
 #include <ctime>
 #include "ustawienia.h"
-
 struct dane;
 
 class komputer{
